@@ -1,0 +1,13 @@
+id: avoid-short-circuit-in-jsx
+message: Avoid short circuit in JSX
+severity: error
+language: Tsx
+rule:
+  kind: jsx_expression
+  has:
+    pattern: $A && $B
+  not:
+    inside:
+      kind: jsx_attribute
+note: Short circuit in JSX expression is not allow. But it's OK for JSX attribute.
+fix: "{$A ? $B: null}"

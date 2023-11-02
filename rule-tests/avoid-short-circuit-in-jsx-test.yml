@@ -1,0 +1,5 @@
+id: avoid-short-circuit-in-jsx
+valid:
+  - <div children={num && <div/>}>text</div>
+invalid:
+  - <div>{ list.length && list.map(i => <p/>) }</div>
